@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    color: #eff0f3;
+    display: flex;
+    height: 100vh; /* 100% de la altura de la ventana */
+}
+.section_blue {
+    background-color: rgb(27, 27, 82);
+    padding: 20px;
+    flex: 1; 
+}
+.logo{
+    transition: 1s
+}
+
+.logo :hover{
+    -webkit-filter: drop-shadow(0 0 5px rgba(171, 252, 240, 0.558));  
+}
+
+li a{
+    color: azure;
+    text-decoration: none;
+}
+li{
+    margin-top: 8px;
+    font-size: 18px;
+    transition: 300ms;
+}
+li :hover{
+    -webkit-filter: drop-shadow(0 0 10px greenyellow);  
+}
+
+.section_white {
+    display: inline-flexbox;
+    flex: 2;
+    padding: 5px;
+    background-color:rgb(226, 226, 230)
+}
+.promos{
+   display: flex;
+   justify-content: center;
+   position: relative;
+   
+}
+
+.categorias a {
+    color: black;
+    background-color: #eff0f3;
+    text-decoration: none; 
+}
+
+.cards {
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+
+/*Efecto para las imagenes de categorias*/
+article {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    transition: all .3s ease;
+    margin: 0.8px;
+}
+
+article img:first-child {
+    box-shadow: 0 60px 60px -60 rgba(0, 30, 255, 0.5);
+    object-fit: cover;
+    width: 100%;
+}
+article img:last-child {
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(25%);
+    transition: .3s ease;
+    opacity: 0;
+    border-radius: 100px;
+}
+article:hover {
+    transform: perspective(250px)
+    rotateX(10deg) 
+    translateY(-10%)
+    translateZ(0); 
+}
+article::before {
+    content: "";
+    position: absolute;
+    bottom: 0;| 
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0) 95%);
+    opacity: 0;
+    transition: all .3s ease;
+}
+article:hover img:last-child {
+    opacity: 1;
+    transform: translateY(10%);
+    -webkit-filter: drop-shadow(0 0 10px rgb(170, 205, 229));
+}
+
+.redes-sociales img{
+    width: 50px ;
+    margin-top: 40px;
+    transition: 400ms;
+}
+
+.redes-sociales:hover .icons:hover{
+    transform: rotateY(360deg);
+    -webkit-filter: drop-shadow(0 0 10px greenyellow);  
+}
+/* otro efecto que deseo dar es: que al dar click en alguna de las cards, todas se agrupen en la esquina superior derecha para dar passo a mostrar la galeria de fotos de la card seleccionada, dejando a esta visible encima de las demas cards que quedaran ocultas.  Eso ocurrir{a con cualquiera de las cards a la que se le haga el evento click. */
+    
